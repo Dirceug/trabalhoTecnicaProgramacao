@@ -30,16 +30,20 @@ Apresenta estrutura base para desenvolvimento de apis.
 
 - **Iniciar em Produção:**
   Para rodar o projeto no modo de produção, execute o comando:
+
   ```bash
   npm start
   ```
+
   Isso executará o arquivo `index.js` com o comando `node index.js`.
 
 - **Modo de Desenvolvimento:**
   Para rodar o projeto com recarga automática no modo de desenvolvimento, use:
+
   ```bash
   npm run dev
   ```
+
   Este comando utiliza o flag `--watch` do Node.js para reiniciar automaticamente o servidor sempre que houver alterações no código.
 
 - **Testes:**
@@ -53,3 +57,22 @@ Apresenta estrutura base para desenvolvimento de apis.
 ## Licença
 
 Este projeto está sob a licença ISC.
+
+## Branches no Git
+
+### main => ultima versão
+
+### trabalho => trabalhando na versão
+
+## Comando básico tabela aluno:
+
+create table aluno (
+cod_aluno SERIAL primary key,
+nome VARCHAR (100) not null,
+idade INTEGER
+)
+
+insert into aluno (nome, idade) VALUES ('João', 20);
+insert into aluno (nome, idade) VALUES ('Maria', 25);
+
+SELECT \* FROM aluno;
