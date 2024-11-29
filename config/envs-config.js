@@ -7,9 +7,10 @@ const dotenv = require("dotenv").config();
 const all = {
   basePath: "/cms/v1",
 
-  env: process.env.ENVIRONMENT,
-  host: "localhost", // ou '0.0.0.0' no linux  || process.env.HOST
-  port:  5000, // || process.env.PORT
+    env: process.env.ENVIRONMENT,
+    host: 'localhost', //process.env.HOST ||
+    port: 5000, //process.env.PORT ||
+
 
   database: {
     host: process.env.DATABASE_HOST,
