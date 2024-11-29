@@ -5,7 +5,7 @@ const Aluno = database.sequelize.define('Aluno', {
    id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
-    allowNull: true,
+    allowNull: false,
     primaryKey: true,
     field: 'cod_aluno'
    },
@@ -16,11 +16,13 @@ const Aluno = database.sequelize.define('Aluno', {
    },
    idade: {
     type: Sequelize.INTEGER, 
-    allowNull: true
+    allowNull: true,
+    field: 'idade'
    }
 }, {
     tableName: 'aluno',
     timestamps: false //desabilita o createdAt e updatedAt do sequelize
 });
+
 
 module.exports = {Aluno};

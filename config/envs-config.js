@@ -8,8 +8,8 @@ const all = {
     basePath: '/cms/v1',
 
     env: process.env.ENVIRONMENT,
-    host: process.env.HOST || '0.0.0.0',
-    port: process.env.PORT || 5000,
+    host: 'localhost', //process.env.HOST ||
+    port: 5000, //process.env.PORT ||
 
 
     database: {
