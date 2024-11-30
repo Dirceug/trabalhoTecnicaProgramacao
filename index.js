@@ -4,6 +4,4 @@ const server = require("./server");
   await server.start();
   console.log("Server listening on: " + server.info.uri);
     await server.start();
-    console.log("Server listening " + server.info.uri);
-    console.log()
 })();
