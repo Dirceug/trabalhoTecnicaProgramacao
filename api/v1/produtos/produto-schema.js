@@ -20,6 +20,7 @@ const createProduto = {
       unidadeMedida: Joi.string().required(),
     }).required(),
     status: Joi.string().min(2).required(),
+    dataCadastro: Joi.date().required(),
   }),
 };
 
@@ -37,4 +38,10 @@ const consultarProdutos = {
   }),
 };
 
-module.exports = { createProduto, consultaPorId, consultarProdutos };
+const deleteProduto = {
+  params: {
+      id: Joi.number().integer().positive().required()
+  }
+};
+
+module.exports = { createProduto, consultaPorId, consultarProdutos, deleteProduto };

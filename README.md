@@ -58,11 +58,15 @@ Apresenta estrutura base para desenvolvimento de apis.
 
 Este projeto está sob a licença ISC.
 
-## Branches no Git
+## dotEnv
+PORT=5005
+HOST=0.0.0.0
 
-### main => ultima versão
-
-### trabalho => trabalhando na versão
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_NAME=postgres
+DATABASE_USER=postgres
+DATABASE_PASSWORD=Mari2Italo!
 
 ## Comando básico tabela aluno:
 
@@ -76,3 +80,46 @@ insert into aluno (nome, idade) VALUES ('João', 20);
 insert into aluno (nome, idade) VALUES ('Maria', 25);
 
 SELECT \* FROM aluno;
+
+## Comando básico tabela produto:
+
+create table produto (
+	id SERIAL primary key,
+	nome VARCHAR (100) not null,
+	descricao varchar (100) not null,
+	categoria varchar (50) not null,
+	marca varchar (50) not null,
+	preco numeric (10,2) not null,
+	quantidadeEstoque int not null,
+	codigoBarras varchar (50) not null,
+	dimensoes JSONB not null,
+	peso JSONB not null,
+	status varchar (10),
+	dataCadastro timestamp WITH TIME ZONE DEFAULT NOW()
+)
+
+
+INSERT INTO produto (
+    nome, 
+    descricao, 
+    categoria, 
+    marca, 
+    preco, 
+    quantidadeEstoque, 
+    codigoBarras, 
+    dimensoes, 
+    peso, 
+    status
+) VALUES (
+    "Televisor", 
+    "50 polegadas LED",
+    "Som e imagem",
+    "Semp Toshiba",
+    3999.90,  -- Preço
+    100,      -- Quantidade em estoque
+    "123456789101112",  -- Código de barras
+    '{"altura": 80, "largura": 90, "comprimento": 20, "medida": "centímetros"}'::JSONB,
+    '{"peso": 1500, "medida": "gramas"}'::JSONB,
+    "ativo"
+)
+

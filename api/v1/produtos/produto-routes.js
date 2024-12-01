@@ -28,6 +28,24 @@ const routes = [
             handler: produtoController.createProduto,
             validate: produtoSchema.createProduto
         }
+    },
+    {
+        method: "DELETE",
+        path: `${baseVersion}/produtos/{id}`,
+        options: {
+            handler: produtoController.deleteProduto,
+            validate: produtoSchema.deleteProduto
+        }
+    },
+    {
+        method: 'GET',
+        path: `${baseVersion}`,
+        handler: (request, h) => {
+            return '<!DOCTYPE html><html><body>' +
+                '<a href="/v1/produtos">Produtos</a><br>' +
+                '<a href="/v1/alunos">Alunos</a>' +
+                '</body></html>';
+        }
     }
 ];
 
